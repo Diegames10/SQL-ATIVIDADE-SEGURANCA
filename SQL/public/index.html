@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Autenticação — Formulários Simples</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="region" aria-label="Formulários de autenticação">
+      <header>
+        <h1>Autenticação</h1>
+      </header>
+
+      <div class="tabs" aria-label="Alternar formulário">
+        <button id="tab-login" class="active" type="button" aria-controls="form-login" aria-selected="true">Entrar</button>
+        <button id="tab-cadastro" type="button" aria-controls="form-cadastro" aria-selected="false">Cadastrar</button>
+      </div>
+
+      <!-- Formulário de Login -->
+      <form id="form-login" action="http://localhost:3000/login" method="POST" novalidate>
+        <div class="row">
+          <label for="username-login">Usuário</label>
+          <input id="username-login" name="username" type="text" inputmode="text" autocomplete="username" placeholder="seu_usuario" required minlength="3" maxlength="150" />
+        </div>
+        <div class="row">
+          <label for="password-login">Senha</label>
+          <input id="password-login" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required minlength="4" maxlength="255" />
+        </div>
+
+        <!-- Mensagem de feedback -->
+        <div id="login-msg" class="hint"></div>
+
+        <button class="btn" type="submit">Entrar</button>
+        <p class="hint">O backend Node.js/Express com SQLite processará esse login.</p>
+      </form>
+
+      <!-- Formulário de Cadastro -->
+      <form id="form-cadastro" class="hidden" action="http://localhost:3000/register" method="POST" novalidate>
+        <div class="row">
+          <label for="username">Usuário</label>
+          <input id="username" name="username" type="text" inputmode="text" autocomplete="username" placeholder="novo_usuario" required minlength="3" maxlength="150" />
+        </div>
+        <div class="row">
+          <label for="password">Senha</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" placeholder="mín. 4 caracteres" required minlength="4" maxlength="255" />
+        </div>
+
+        <input type="hidden" name="provider" value="local" />
+
+        <!-- Mensagem de feedback -->
+        <div id="register-msg" class="hint"></div>
+
+        <button class="btn" type="submit">Cadastrar</button>
+        <p class="hint">O backend Node.js/Express salvará esse usuário no SQLite.</p>
+      </form>
+
+      <footer>
+        <span class="muted">Exemplo estático • As ações já apontam para <code>http://localhost:3000</code></span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

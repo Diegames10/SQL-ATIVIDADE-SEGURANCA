@@ -1,0 +1,31 @@
+:root { --gap: 14px; --radius: 14px; }
+* { box-sizing: border-box; }
+body { 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Segoe UI Symbol', sans-serif; 
+  margin: 0; 
+  background: #0f172a; 
+  color: #e2e8f0; 
+}
+.wrap { min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+.card { width: 100%; max-width: 420px; background: #111827; border: 1px solid #1f2937; border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,.35); overflow: hidden; }
+header { padding: 20px; border-bottom: 1px solid #1f2937; background: #0b1220; }
+header h1 { margin: 0; font-size: 18px; letter-spacing: .3px; }
+.tabs { display: grid; grid-template-columns: 1fr 1fr; }
+.tabs button { appearance: none; border: none; background: transparent; color: #a5b4fc; padding: 12px; cursor: pointer; border-bottom: 2px solid transparent; font-weight: 600; }
+.tabs button.active { border-color: #6366f1; color: #fff; }
+form { display: grid; gap: var(--gap); padding: 20px; }
+label { font-size: 14px; color: #cbd5e1; }
+input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #334155; background: #0b1220; color: #e5e7eb;
+}
+input::placeholder { color: #64748b; }
+.row { display: grid; gap: var(--gap); }
+.btn { padding: 12px 14px; border-radius: 12px; border: 1px solid #394867; background: #1f2a44; color: #fff; cursor: pointer; font-weight: 700; }
+.btn:hover { filter: brightness(1.15); }
+.muted { font-size: 12px; color: #94a3b8; }
+.danger { color: #fca5a5; }
+.hint { font-size: 12px; color: #a3a3a3; }
+footer { padding: 12px 20px; border-top: 1px solid #1f2937; background: #0b1220; font-size: 12px; color: #9ca3af; }
+a { color: #a5b4fc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hidden { display: none; }
